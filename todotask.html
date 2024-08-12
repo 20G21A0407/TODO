@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+
+#container {
+  width: 500px;
+  padding: 60px 10px;
+  text-align: center;
+  margin: 100px auto 30px;
+  box-shadow: 0 0 10px green;
+}
+
+#usersInformation {
+  width: 500px;
+  margin: 30px auto;
+}
+    </style>
+   
+    <script>
+  var ol = document.createElement("ol");
+
+ function getTextBoxData(){
+   var inputDom = document.querySelector("input");
+   var data = inputDom.value;
+
+   var li = document.createElement("li");
+   var button = document.createElement("button"); 
+   
+
+   li.innerText = data;
+   li.appendChild(button);
+   ol.appendChild(li);
+   button.innerText = "delete";
+   li.style.margin = "30px";
+   button.style.margin="20px";
+   button.style.backgroundColor = "green";
+   button.style.color =" red";
+  var divDom = document.getElementById("usersInformation");
+  divDom.appendChild(ol);
+  button.onclick = function(){
+    button.style.display = "none";
+    li.style.display = "none";
+
+  }
+    }
+    </script>
+
+
+
+    <title>Todo Task</title>
+  </head>
+  <body>
+    <div id="container">
+      <h2>Todo Task or Assignment</h2>
+      <input value="Sagar" type="text" placeholder="Enter Some Text" />
+      <button onclick="getTextBoxData()">Submit</button>
+    </div>
+
+    <div id="usersInformation"></div>
+  </body>
+</html>
+
+
+
+
+
